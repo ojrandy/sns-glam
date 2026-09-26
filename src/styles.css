@@ -29,6 +29,8 @@
 }
 * { border-color: var(--border); }
 html { scroll-behavior: smooth; }
+html.lenis, html.lenis body { height: auto; scroll-behavior: auto; }
+.lenis.lenis-stopped { overflow: hidden; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); letter-spacing: 0; }
 body.modal-open { overflow: hidden; }
 ::selection { background: var(--rose); color: var(--cream); }
