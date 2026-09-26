@@ -3,4 +3,4 @@
 - [x] Build image and content data
 - [x] Build home and all content routes
 - [x] Build booking and contact forms
-- [ ] Verify desktop/mobile experience and build
+- [x] Verify desktop/mobile experience and build
