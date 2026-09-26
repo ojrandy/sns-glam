@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { FaqPage } from "@/components/pages";
+export const Route=createFileRoute("/faq")({head:()=>({meta:[{title:"Frequently Asked Questions — SnS Glams"},{name:"description",content:"Answers about SnS Glams bookings, appointments, services and deposits."},{property:"og:title",content:"Frequently Asked Questions — SnS Glams"},{property:"og:description",content:"Answers about SnS Glams bookings, appointments, services and deposits."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:FaqPage});

@@ -10,33 +10,228 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BookingsRouteImport } from './routes/bookings'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ServicesHairBraidingRouteImport } from './routes/services.hair-braiding'
+import { Route as ServicesHairInstallationsRouteImport } from './routes/services.hair-installations'
+import { Route as ServicesMakeupRouteImport } from './routes/services.makeup'
+import { Route as ServicesPhotoshootsRouteImport } from './routes/services.photoshoots'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookingsRoute = BookingsRouteImport.update({
+  id: '/bookings',
+  path: '/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
+const ServicesHairBraidingRoute = ServicesHairBraidingRouteImport.update({
+  id: '/hair-braiding',
+  path: '/hair-braiding',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesHairInstallationsRoute =
+  ServicesHairInstallationsRouteImport.update({
+    id: '/hair-installations',
+    path: '/hair-installations',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesMakeupRoute = ServicesMakeupRouteImport.update({
+  id: '/makeup',
+  path: '/makeup',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesPhotoshootsRoute = ServicesPhotoshootsRouteImport.update({
+  id: '/photoshoots',
+  path: '/photoshoots',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/bookings': typeof BookingsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
+  '/services/hair-braiding': typeof ServicesHairBraidingRoute
+  '/services/hair-installations': typeof ServicesHairInstallationsRoute
+  '/services/makeup': typeof ServicesMakeupRoute
+  '/services/photoshoots': typeof ServicesPhotoshootsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/bookings': typeof BookingsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
+  '/services/hair-braiding': typeof ServicesHairBraidingRoute
+  '/services/hair-installations': typeof ServicesHairInstallationsRoute
+  '/services/makeup': typeof ServicesMakeupRoute
+  '/services/photoshoots': typeof ServicesPhotoshootsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/bookings': typeof BookingsRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/faq': typeof FaqRoute
+  '/gallery': typeof GalleryRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/reviews': typeof ReviewsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/blog/$slug': typeof BlogSlugRoute
+  '/services/hair-braiding': typeof ServicesHairBraidingRoute
+  '/services/hair-installations': typeof ServicesHairInstallationsRoute
+  '/services/makeup': typeof ServicesMakeupRoute
+  '/services/photoshoots': typeof ServicesPhotoshootsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/bookings'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/gallery'
+    | '/privacy-policy'
+    | '/reviews'
+    | '/services'
+    | '/blog/$slug'
+    | '/services/hair-braiding'
+    | '/services/hair-installations'
+    | '/services/makeup'
+    | '/services/photoshoots'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/bookings'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/gallery'
+    | '/privacy-policy'
+    | '/reviews'
+    | '/services'
+    | '/blog/$slug'
+    | '/services/hair-braiding'
+    | '/services/hair-installations'
+    | '/services/makeup'
+    | '/services/photoshoots'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/blog'
+    | '/bookings'
+    | '/contact'
+    | '/disclaimer'
+    | '/faq'
+    | '/gallery'
+    | '/privacy-policy'
+    | '/reviews'
+    | '/services'
+    | '/blog/$slug'
+    | '/services/hair-braiding'
+    | '/services/hair-installations'
+    | '/services/makeup'
+    | '/services/photoshoots'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  BookingsRoute: typeof BookingsRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  FaqRoute: typeof FaqRoute
+  GalleryRoute: typeof GalleryRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ReviewsRoute: typeof ReviewsRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +243,154 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bookings': {
+      id: '/bookings'
+      path: '/bookings'
+      fullPath: '/bookings'
+      preLoaderRoute: typeof BookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/services/hair-braiding': {
+      id: '/services/hair-braiding'
+      path: '/hair-braiding'
+      fullPath: '/services/hair-braiding'
+      preLoaderRoute: typeof ServicesHairBraidingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/hair-installations': {
+      id: '/services/hair-installations'
+      path: '/hair-installations'
+      fullPath: '/services/hair-installations'
+      preLoaderRoute: typeof ServicesHairInstallationsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/makeup': {
+      id: '/services/makeup'
+      path: '/makeup'
+      fullPath: '/services/makeup'
+      preLoaderRoute: typeof ServicesMakeupRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/photoshoots': {
+      id: '/services/photoshoots'
+      path: '/photoshoots'
+      fullPath: '/services/photoshoots'
+      preLoaderRoute: typeof ServicesPhotoshootsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface ServicesRouteChildren {
+  ServicesHairBraidingRoute: typeof ServicesHairBraidingRoute
+  ServicesHairInstallationsRoute: typeof ServicesHairInstallationsRoute
+  ServicesMakeupRoute: typeof ServicesMakeupRoute
+  ServicesPhotoshootsRoute: typeof ServicesPhotoshootsRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesHairBraidingRoute: ServicesHairBraidingRoute,
+  ServicesHairInstallationsRoute: ServicesHairInstallationsRoute,
+  ServicesMakeupRoute: ServicesMakeupRoute,
+  ServicesPhotoshootsRoute: ServicesPhotoshootsRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BlogRoute: BlogRouteWithChildren,
+  BookingsRoute: BookingsRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  FaqRoute: FaqRoute,
+  GalleryRoute: GalleryRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ReviewsRoute: ReviewsRoute,
+  ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
