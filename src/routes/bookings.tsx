@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { BookingsPage } from "@/components/pages";
+export const Route=createFileRoute("/bookings")({head:()=>({meta:[{title:"Book an Appointment — SnS Glams"},{name:"description",content:"Request your makeup, hair, braiding or studio photography appointment."},{property:"og:title",content:"Book an Appointment — SnS Glams"},{property:"og:description",content:"Request your makeup, hair, braiding or studio photography appointment."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:BookingsPage});

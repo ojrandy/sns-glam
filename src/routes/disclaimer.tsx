@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { LegalPage } from "@/components/pages";
+export const Route=createFileRoute("/disclaimer")({head:()=>({meta:[{title:"Disclaimer — SnS Glams"},{name:"description",content:"Important service, pricing and beauty advice information from SnS Glams."},{property:"og:title",content:"Disclaimer — SnS Glams"},{property:"og:description",content:"Important service, pricing and beauty advice information from SnS Glams."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <LegalPage type="disclaimer"/>});
