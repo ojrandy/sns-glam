@@ -6,3 +6,5 @@
 - Keep all public site content in `src/data` and render it through shared components so pricing and brand details remain consistent.
 - Keep one global booking modal under `BookingProvider`; every booking action supplies optional service/package preselection.
 - Use TanStack Router file routes and shared chrome in the root route because this project uses TanStack Start.
+- Parent routes with child pages render their index content only on the exact parent URL and render an Outlet elsewhere, so nested service and journal pages remain visible.
+- Keep the home 3D accent abstract and client-mounted; the scroll-driven sculpture uses semantic scene colors and never competes with real portrait photography.
