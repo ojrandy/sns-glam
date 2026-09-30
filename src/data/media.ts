@@ -1,15 +1,15 @@
 // Real client work from the studio (src/Images) plus free Unsplash stock (src/assets/stock) for scenes we don't have yet.
-import fullGlam from "@/Images/WhatsApp Image 2026-06-23 at 2.29.11 AM(7).jpeg";
-import bridalGlam from "@/Images/WhatsApp Image 2026-06-23 at 2.27.29 AM(2).jpeg";
-import sleekInstall from "@/Images/WhatsApp Image 2026-06-23 at 2.27.30 AM(9).jpeg";
-import editorialShoot from "@/Images/WhatsApp Image 2026-06-23 at 2.29.11 AM(3).jpeg";
-import lashCloseUp from "@/Images/WhatsApp Image 2026-06-23 at 2.29.11 AM(13).jpeg";
-import curlsGlam from "@/Images/WhatsApp Image 2026-06-23 at 2.27.30 AM(13).jpeg";
-import honeyBob from "@/Images/WhatsApp Image 2026-06-23 at 2.26.54 AM(4).jpeg";
-import goldenWaves from "@/Images/WhatsApp Image 2026-06-23 at 2.27.28 AM(1).jpeg";
-import plumWaves from "@/Images/WhatsApp Image 2026-06-23 at 2.29.11 AM(2).jpeg";
-import softWaves from "@/Images/WhatsApp Image 2026-06-23 at 2.27.28 AM(2).jpeg";
-import deepPlum from "@/Images/WhatsApp Image 2026-06-23 at 2.29.11 AM(1).jpeg";
+import fullGlam from "@/Images/full-glam.jpeg";
+import bridalGlam from "@/Images/bridal-glam.jpeg";
+import sleekInstall from "@/Images/sleek-install.jpeg";
+import editorialShoot from "@/Images/editorial-shoot.jpeg";
+import lashCloseUp from "@/Images/lash-close-up.jpeg";
+import curlsGlam from "@/Images/curls-glam.jpeg";
+import honeyBob from "@/Images/honey-bob-studio.jpeg";
+import goldenWaves from "@/Images/golden-waves-studio.jpeg";
+import plumWaves from "@/Images/plum-waves-studio.jpeg";
+import softWaves from "@/Images/soft-waves.jpeg";
+import deepPlum from "@/Images/deep-plum.jpeg";
 import makeupArtist from "@/assets/stock/makeup-artist.jpg";
 import photoStudio from "@/assets/stock/photo-studio.jpg";
 import wedding from "@/assets/stock/wedding.jpg";
