@@ -15,7 +15,7 @@
   --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring);
   --color-burgundy: var(--burgundy); --color-rose: var(--rose); --color-cream: var(--cream);
-  --color-blush: var(--blush); --color-nude: var(--nude); --color-ink: var(--ink);
+  --color-blush: var(--blush); --color-nude: var(--nude); --color-ink: var(--ink); --color-petal: var(--petal); --color-wine: var(--wine);
   --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px); --radius-2xl: calc(var(--radius) + 8px);
 }
 :root {
@@ -26,6 +26,7 @@
   --accent-foreground: oklch(0.98 0.01 50); --border: oklch(0.67 0.07 21 / .42); --input: oklch(0.8 0.03 35);
   --ring: oklch(0.58 0.095 15); --burgundy: oklch(0.29 0.105 25); --rose: oklch(0.58 0.095 15);
   --cream: oklch(0.976 0.012 54); --blush: oklch(0.93 0.027 37); --nude: oklch(0.72 0.064 45); --ink: oklch(0.14 0.05 25);
+  --petal: oklch(0.82 0.06 25); --wine: oklch(0.24 0.085 20);
 }
 * { border-color: var(--border); }
 html { scroll-behavior: smooth; }
@@ -36,6 +37,8 @@ body.modal-open { overflow: hidden; }
 .font-script { font-family: var(--font-script); }
 .rose-gradient { background: linear-gradient(135deg, oklch(0.79 0.07 35), var(--rose), oklch(0.45 0.09 18)); }
 .text-rose-gradient { background: linear-gradient(135deg, oklch(0.83 0.06 35), var(--rose)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.rose-ring { background: linear-gradient(145deg, oklch(0.86 0.05 35), var(--rose) 55%, oklch(0.5 0.09 18)); }
+@utility glow { box-shadow: 0 0 0 1px oklch(0.82 0.06 25 / .6), 0 18px 50px -12px oklch(0.58 0.095 15 / .55); }
 .grain { position:relative; }
 .grain::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:.055; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E"); }
 .marquee-track { animation: marquee 24s linear infinite; }
