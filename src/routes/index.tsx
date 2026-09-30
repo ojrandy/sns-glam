@@ -32,7 +32,7 @@ const valueItems = [
   { Icon: Flower2, label: "Every Occasion", text: "From everyday to your biggest moments." },
 ];
 const occasions = [
-  { name: "Weddings", image: media.wedding, position: "center 25%" },
+  { name: "Weddings", image: media.wedding, position: "center 30%" },
   { name: "Birthdays", image: media.birthday, position: "center 60%" },
   { name: "Anniversaries", image: media.anniversary, position: "center 35%" },
   { name: "Photoshoots", image: media.photoshoot, position: "center 15%" },
