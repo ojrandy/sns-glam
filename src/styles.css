@@ -27,7 +27,6 @@
   --ring: oklch(0.58 0.095 15); --burgundy: oklch(0.29 0.105 25); --rose: oklch(0.58 0.095 15);
   --cream: oklch(0.976 0.012 54); --blush: oklch(0.93 0.027 37); --nude: oklch(0.72 0.064 45); --ink: oklch(0.14 0.05 25);
   --petal: oklch(0.82 0.06 25); --wine: oklch(0.24 0.085 20);
-  --scene-burgundy: #5b101c; --scene-rose: #c78589; --scene-blush: #ead0ca; --scene-cream: #fff4eb; --scene-ink: #17080b;
 }
 * { border-color: var(--border); }
 html { scroll-behavior: smooth; }
@@ -46,5 +45,4 @@ body.modal-open { overflow: hidden; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes kenburns { from { transform:scale(1.02) } to { transform:scale(1.11) } }
 .kenburns { animation:kenburns 7s ease-out both; }
-.beauty-grid { background-image: linear-gradient(var(--cream) 1px, transparent 1px), linear-gradient(90deg, var(--cream) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent); }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }

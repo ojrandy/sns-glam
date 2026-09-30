@@ -2,7 +2,7 @@
 
 The website for **SnS Glams Hair & Makeup Studio**, a luxury beauty studio in Maryland offering makeup, hair installations, braiding and in-house studio photography.
 
-It's a fast, server-rendered React site with an editorial look, a single site-wide booking flow and a scroll-driven 3D section on the home page. There is no database and no login. All content lives in typed data files, and enquiries go straight to the studio's inbox.
+It's a fast, server-rendered React site with an editorial look and a single site-wide booking flow. There is no database and no login. All content lives in typed data files, and enquiries go straight to the studio's inbox.
 
 ![Home page](UI/home.png)
 
@@ -38,7 +38,6 @@ It's a fast, server-rendered React site with an editorial look, a single site-wi
 - **Editorial design system.** Burgundy, rose and cream tokens, Cormorant Garamond display type, Allura script accents and Jost body text, all defined in `src/styles.css` with Tailwind CSS v4.
 - **One site-wide booking modal ("Get a Quote").** Any "Book" button can open it with a service and package already selected. It has field validation, venue and address handling, time-slot selection and a deposit acknowledgement.
 - **Enquiry delivery that doesn't lose messages.** Forms try Web3Forms first, then FormSubmit, then fall back to a pre-filled `mailto:` link.
-- **Scroll-driven 3D section.** A React Three Fiber scene on the home page that reacts to scroll position and respects `prefers-reduced-motion`.
 - **Real studio work.** The gallery uses the studio's own photos, with 640px thumbnails and 1280px lightbox versions. A few Unsplash photos fill categories that don't have enough studio shots yet.
 - **SEO on every route.** Each page sets its own title, description, Open Graph and Twitter tags, and pages are server-rendered.
 - **Smooth motion.** Lenis smooth scrolling, Motion reveal animations, Ken Burns hero slides and a marquee.
@@ -51,7 +50,7 @@ It's a fast, server-rendered React site with an editorial look, a single site-wi
 | Framework | [TanStack Start](https://tanstack.com/start) (React 19, SSR) with file-based [TanStack Router](https://tanstack.com/router) |
 | Build | Vite 8, Nitro (Node server output) |
 | Styling | Tailwind CSS v4, shadcn/ui on Radix UI primitives, `tw-animate-css` |
-| Motion & 3D | Motion, Lenis, Three.js, `@react-three/fiber`, `@react-three/drei` |
+| Motion | Motion, Lenis |
 | UI bits | Embla Carousel, Lucide icons, Sonner toasts |
 | Quality | TypeScript, ESLint, Prettier |
 
@@ -111,7 +110,6 @@ Copy `.env.example` to `.env`. The `.env` file is gitignored.
 │   │   ├── editorial.tsx    # Shared blocks: Reveal, BookButton, CTABanner, Curve...
 │   │   ├── pages.tsx        # Page bodies for the content routes
 │   │   ├── gallery-page.tsx # Filterable gallery with lightbox
-│   │   ├── beauty-motion.tsx# Scroll-driven 3D scene (React Three Fiber)
 │   │   └── ui/              # shadcn/ui components
 │   ├── data/                # All site content, see "Editing content"
 │   ├── lib/
@@ -131,7 +129,7 @@ Copy `.env.example` to `.env`. The `.env` file is gitignored.
 
 | URL | Page |
 | --- | --- |
-| `/` | Home: hero carousel, services, about, 3D motion section, packages, occasions, gallery, reviews, journal, CTA |
+| `/` | Home: hero carousel, services, about, packages, occasions, gallery, reviews, journal, CTA |
 | `/services` | All services and packages |
 | `/services/makeup` | Soft glam, full glam and bridal makeup |
 | `/services/hair-installations` | Installs, 360 installs and bridal hair |

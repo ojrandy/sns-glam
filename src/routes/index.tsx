@@ -18,7 +18,6 @@ import { services, featuredPackages } from "@/data/services";
 import { media } from "@/data/media";
 import { posts } from "@/data/posts";
 import { site } from "@/data/site";
-import { BeautyMotion } from "@/components/beauty-motion";
 
 const trustItems = [
   { Icon: Gem, label: "Bridal Specialists" },
@@ -67,7 +66,6 @@ function Home() {
       <Marquee />
       <Services />
       <About />
-      <BeautyMotion />
       <Packages />
       <Occasions />
       <Gallery />
