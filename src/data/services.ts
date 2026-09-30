@@ -1,7 +1,7 @@
-import makeupImage from "@/assets/makeup-editorial.jpg";
-import hairImage from "@/assets/hair-editorial.jpg";
-import photoImage from "@/assets/photoshoot-editorial.jpg";
-import braidsImage from "@/assets/braids-editorial.jpg";
+import makeupImage from "@/Images/WhatsApp Image 2026-06-23 at 2.27.30 AM(14).jpeg";
+import hairImage from "@/Images/WhatsApp Image 2026-06-23 at 2.27.28 AM(9).jpeg";
+import photoImage from "@/Images/WhatsApp Image 2026-06-23 at 2.29.11 AM(18).jpeg";
+import braidsImage from "@/Images/WhatsApp Image 2026-06-23 at 2.26.54 AM(11).jpeg";
 import { media } from "./media";
 
 export type ServiceId = "makeup" | "hair-installations" | "photoshoots" | "hair-braiding";
