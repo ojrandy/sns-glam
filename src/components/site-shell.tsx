@@ -131,11 +131,12 @@ function Footer() {
   const serviceLinks: readonly [SitePath, string][] = [...services.map((s) => [s.href as SitePath, s.name] as [SitePath, string]), ["/services", "All Services"]];
   return (
     <footer className="grain bg-ink px-5 pb-8 pt-16 text-cream lg:px-10 lg:pt-20">
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.35fr)] lg:grid-rows-[auto_repeat(5,auto)] lg:gap-x-12 lg:gap-y-3">
-        <div className="lg:row-span-6 lg:max-w-xs">
-          <Brand light className="h-16 sm:h-20" />
+      {/* Below lg: centered brand, Quick Links + Services side by side, then a centered Contact column */}
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.35fr)] lg:grid-rows-[auto_repeat(5,auto)] lg:gap-x-12 lg:gap-y-3">
+        <div className="col-span-2 mx-auto max-w-sm text-center lg:col-span-1 lg:row-span-6 lg:mx-0 lg:max-w-xs lg:text-left">
+          <div className="flex justify-center lg:justify-start"><Brand light className="h-16 sm:h-20" /></div>
           <p className="mt-5 text-sm leading-6 text-cream/65">Luxury hair, makeup &amp; photography for every occasion.</p>
-          <div className="mt-6"><Socials /></div>
+          <div className="mt-6 flex justify-center lg:justify-start"><Socials /></div>
         </div>
         <FooterCol title="Quick Links">
           {footerQuickLinks.map(([to, label]) => <li key={to}><Link to={to} className={footerLink}>{label}</Link></li>)}
@@ -143,7 +144,7 @@ function Footer() {
         <FooterCol title="Services">
           {serviceLinks.map(([to, label]) => <li key={to}><Link to={to} activeOptions={{ exact: true }} className={footerLink}>{label}</Link></li>)}
         </FooterCol>
-        <FooterCol title="Contact">
+        <FooterCol title="Contact" className="col-span-2 border-t border-cream/10 pt-10 lg:col-span-1 lg:border-0 lg:pt-0">
           <li className="flex items-start gap-3"><MapPin className={footerIcon} />{site.address}</li>
           <li><a href={`mailto:${site.email}`} className={`${footerLink} [overflow-wrap:anywhere]`}><Mail className={footerIcon} />{site.email}</a></li>
           <li className="flex items-start gap-3"><Clock className={footerIcon} />{site.hours}</li>
@@ -165,6 +166,7 @@ function Footer() {
 }
 function TikTok(){return <svg viewBox="0 0 24 24" aria-hidden className="size-4" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-2.59-2.59c.27 0 .53.04.77.12V9.77a5.7 5.7 0 0 0-.77-.05 5.68 5.68 0 1 0 5.68 5.68V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.28 4.28 0 0 1-3.24-1.48Z"/></svg>}
 /** Heading + a list of exactly 5 items; on lg both levels use subgrid to share the parent's row tracks. */
-function FooterCol({title,children}:{title:string;children:React.ReactNode}){
-  return <div className="grid content-start gap-y-3 lg:row-span-6 lg:grid-rows-subgrid"><h3 className="mb-2 text-[11px] font-medium uppercase leading-4 tracking-[.22em] text-petal">{title}</h3><ul className="grid gap-y-3 text-sm leading-5 text-cream/70 lg:row-span-5 lg:grid-rows-subgrid">{children}</ul></div>
+/** Below lg the column is centered; from lg it aligns left. */
+function FooterCol({title,className="",children}:{title:string;className?:string;children:React.ReactNode}){
+  return <div className={`grid content-start gap-y-3 text-center lg:row-span-6 lg:grid-rows-subgrid lg:text-left ${className}`}><h3 className="mb-2 text-[11px] font-medium uppercase leading-4 tracking-[.22em] text-petal">{title}</h3><ul className="grid justify-items-center gap-y-3 text-sm leading-5 text-cream/70 lg:row-span-5 lg:grid-rows-subgrid lg:justify-items-stretch">{children}</ul></div>
 }
