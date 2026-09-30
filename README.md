@@ -60,8 +60,8 @@ It's a fast, server-rendered React site with an editorial look, a single site-wi
 **Prerequisites:** Node.js 22 or newer and npm. Bun works too, since `bun.lock` is kept in sync.
 
 ```sh
-git clone https://github.com/ojrandy/sns-glam-studio-showcase.git
-cd sns-glam-studio-showcase
+git clone https://github.com/ojrandy/sns-glam.git
+cd sns-glam
 npm install
 cp .env.example .env   # optional, see "Environment variables"
 npm run dev
