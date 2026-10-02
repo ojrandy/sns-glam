@@ -53,7 +53,7 @@ export const services: Service[] = [
     id: "hair-installations", name: "Hair Installations", shortName: "Install", tagline: "Hair that turns heads", eyebrow: "EFFORTLESS FINISH", headline: "Flawless Installs. Effortless Confidence.", description: "Seamless installs and 360 finishes that look like they grew there.", image: hairImage, href: "/services/hair-installations",
     packages: [
       { name: "Hair Installation", price: 100, description: "A secure, natural-looking install with a melted hairline and styling to finish.", includes: ["Natural hair prep", "Unit or bundle install", "Hairline customization", "Finished styling"] },
-      { name: "360 Installation", price: 150, description: "A full 360 unit installed so you can wear it up, down or pulled back with confidence.", includes: ["Full-perimeter lace customization", "Plucking & bleaching guidance", "Secure 360 install", "Ponytail-ready styling"] },
+      { name: "360 Installation", price: 180, description: "A full 360 unit installed so you can wear it up, down or pulled back with confidence.", includes: ["Full-perimeter lace customization", "Plucking & bleaching guidance", "Secure 360 install", "Ponytail-ready styling"] },
       { name: "Bridal Hair", price: 250, description: "Wedding-day hair designed to complement your veil, accessories and makeup.", includes: ["Bridal style consultation", "Install or styling of your choice", "Veil & accessory placement", "Long-hold finish"] },
     ],
     details: {
@@ -145,7 +145,7 @@ export const services: Service[] = [
 export const featuredPackages = [
   { service: "makeup" as ServiceId, name: "Full Glam", title: "Full Glam", price: 120, image: media.fullGlam, badge: null },
   { service: "makeup" as ServiceId, name: "Bridal Glam", title: "Bridal Glam", price: 250, image: media.bridalGlam, badge: "Most Loved" },
-  { service: "hair-installations" as ServiceId, name: "360 Installation", title: "360 Installation", price: 150, image: media.sleekInstall, badge: null },
+  { service: "hair-installations" as ServiceId, name: "360 Installation", title: "360 Installation", price: 180, image: media.sleekInstall, badge: null },
   { service: "photoshoots" as ServiceId, name: "10 photos + 4 outfits", title: "10-Photo Shoot", price: 350, image: media.editorialShoot, badge: null },
 ];
 export const getService = (id?: string) => services.find((service) => service.id === id);

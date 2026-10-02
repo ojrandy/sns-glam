@@ -39,7 +39,7 @@ const occasions = [
 ];
 // Home-only photography, keyed by service / package so the shared service data stays untouched.
 const heroImages: Record<ServiceId, string> = {
-  makeup: photo.blondeTwaGlow,
+  makeup: photo.emeraldGlam,
   "hair-installations": photo.sleekStraight,
   photoshoots: photo.fingerWaves,
   "hair-braiding": photo.knotlessBraids,

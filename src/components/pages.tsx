@@ -26,7 +26,6 @@ export function ServicePage({service}:{service:Service}){
         <div>
           <SectionHeading eyebrow={service.name.toUpperCase()} script={d.intro.script} title={d.intro.title}/>
           <Reveal className="space-y-5 text-lg leading-8 text-muted-foreground">{d.intro.paragraphs.map(p=><p key={p.slice(0,30)}>{p}</p>)}</Reveal>
-          {service.id==="hair-braiding"&&<p className="mt-6 text-muted-foreground">Visit <a href="https://heritageafricanhairbraiding.com/" target="_blank" rel="noreferrer" className="underline hover:text-rose">Heritage African Hair Braiding</a> to learn more about our partner studio.</p>}
         </div>
         <Reveal className="relative">
           <img src={d.feature.image} alt={d.feature.alt} loading="lazy" className="aspect-[4/5] w-full object-cover"/>
