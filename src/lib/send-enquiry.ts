@@ -18,8 +18,9 @@ const LABELS: Record<string, string> = {
   phone: "Phone",
   subject: "Subject",
   message: "Message",
-  service: "Service",
-  package: "Package",
+  service: "Services",
+  package: "Packages",
+  estimate: "Estimated total",
   occasion: "Occasion",
   people: "Number of people",
   location: "Location",
@@ -28,13 +29,14 @@ const LABELS: Record<string, string> = {
   time: "Preferred time",
   notes: "Notes",
   deposit: "Deposit acknowledged",
+  travel: "Relocation fee & travel terms acknowledged",
 };
 
 function clean(fields: Enquiry["fields"]) {
   const out: Record<string, string> = {};
   for (const [key, value] of Object.entries(fields)) {
     if (key === "botcheck" || typeof value !== "string" || !value.trim()) continue;
-    out[LABELS[key] ?? key] = key === "deposit" ? "Yes" : value.trim();
+    out[LABELS[key] ?? key] = key === "deposit" || key === "travel" ? "Yes" : value.trim();
   }
   return out;
 }

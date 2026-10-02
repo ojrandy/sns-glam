@@ -14,8 +14,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { useBooking } from "@/components/booking";
 import { BookButton, CTABanner, Curve, Reveal } from "@/components/editorial";
-import { services, featuredPackages } from "@/data/services";
-import { media } from "@/data/media";
+import { services, featuredPackages, type ServiceId } from "@/data/services";
+import { homeMedia as photo } from "@/data/media";
 import { posts } from "@/data/posts";
 import { site } from "@/data/site";
 
@@ -32,11 +32,30 @@ const valueItems = [
   { Icon: Flower2, label: "Every Occasion", text: "From everyday to your biggest moments." },
 ];
 const occasions = [
-  { name: "Weddings", image: media.wedding, position: "center 30%" },
-  { name: "Birthdays", image: media.birthday, position: "center 60%" },
-  { name: "Anniversaries", image: media.anniversary, position: "center 35%" },
-  { name: "Photoshoots", image: media.photoshoot, position: "center 15%" },
+  { name: "Weddings", image: photo.goldenWavesGlam, position: "center 30%" },
+  { name: "Birthdays", image: photo.burgundyCurlsUpdo, position: "center 30%" },
+  { name: "Anniversaries", image: photo.burgundyCurlsProfile, position: "center 35%" },
+  { name: "Photoshoots", image: photo.blondeCropGlam, position: "center 25%" },
 ];
+// Home-only photography, keyed by service / package so the shared service data stays untouched.
+const heroImages: Record<ServiceId, string> = {
+  makeup: photo.blondeTwaGlow,
+  "hair-installations": photo.sleekStraight,
+  photoshoots: photo.fingerWaves,
+  "hair-braiding": photo.knotlessBraids,
+};
+const serviceImages: Record<ServiceId, string> = {
+  makeup: photo.pinkCutCrease,
+  "hair-installations": photo.bodyWaveSmile,
+  photoshoots: photo.honeyWavesOrange,
+  "hair-braiding": photo.cornrowsGlam,
+};
+const packageImages: Record<string, string> = {
+  "Full Glam": photo.emeraldGlam,
+  "Bridal Glam": photo.goldenWavesSmile,
+  "360 Installation": photo.halfUpWaves,
+  "10 photos + 4 outfits": photo.honeyWavesSoft,
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -135,12 +154,12 @@ function Hero() {
         {services.map((s, i) => (
           <div key={s.id} className="relative min-w-0 flex-[0_0_100%]">
             <img
-              src={s.image}
+              src={heroImages[s.id]}
               alt={s.name}
               width={1200}
               height={1600}
               fetchPriority={i === 0 ? "high" : "auto"}
-              className={`absolute inset-y-0 right-0 h-full w-full object-cover object-[center_18%] md:w-[68%] ${i === index ? "kenburns" : ""}`}
+              className={`absolute inset-y-0 right-0 h-full w-full object-cover object-[center_30%] md:w-[68%] ${i === index ? "kenburns" : ""}`}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-wine/95 via-wine/75 to-wine/25 md:hidden" />
             <div className="absolute inset-0 hidden bg-gradient-to-r from-wine from-30% via-wine/70 via-50% to-transparent to-80% md:block" />
@@ -279,7 +298,7 @@ function Services() {
                   <div className="rose-ring mx-auto aspect-square w-full max-w-[210px] rounded-full p-[5px] transition duration-500 group-hover:glow">
                     <div className="h-full w-full overflow-hidden rounded-full border-4 border-cream">
                       <img
-                        src={s.image}
+                        src={serviceImages[s.id]}
                         alt={s.name}
                         loading="lazy"
                         width={1200}
@@ -315,24 +334,24 @@ function About() {
         <Reveal className="relative mx-auto h-[330px] w-full max-w-[560px] sm:h-[400px]">
           <div className={`${frame} left-0 top-8 h-[72%] w-[38%] -rotate-6`}>
             <img
-              src={media.makeupArtist}
-              alt="Makeup artist at work"
+              src={photo.copperPonytail}
+              alt="Soft glam with a sleek copper ponytail"
               loading="lazy"
               className="h-full w-full object-cover"
             />
           </div>
           <div className={`${frame} left-[29%] top-2 z-10 h-[76%] w-[40%] rotate-2`}>
             <img
-              src={media.photoStudio}
-              alt="SnS Glams photo studio"
+              src={photo.sleekBob}
+              alt="Sleek bob with bold glam"
               loading="lazy"
               className="h-full w-full object-cover"
             />
           </div>
           <div className={`${frame} right-0 top-10 z-20 h-[80%] w-[36%] rotate-[5deg]`}>
             <img
-              src={media.plumWaves}
-              alt="Finished glam look"
+              src={photo.sleekPonytail}
+              alt="Sleek high ponytail with sunset glam"
               loading="lazy"
               className="h-full w-full object-cover object-top"
             />
@@ -402,7 +421,7 @@ function Packages() {
                 )}
                 <div className="aspect-[4/3] overflow-hidden rounded-lg">
                   <img
-                    src={p.image}
+                    src={packageImages[p.name] ?? p.image}
                     alt={p.title}
                     loading="lazy"
                     className="h-full w-full object-cover object-[center_20%] transition duration-700 group-hover:scale-105"
@@ -492,14 +511,18 @@ function Gallery() {
           </div>
         </div>
         <Reveal className="grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] md:h-[280px] md:auto-rows-auto md:grid-cols-[1.3fr_.7fr_1.3fr_1fr_1.1fr] md:grid-rows-1">
-          {img(media.lashCloseUp, "Soft glam close-up")}
-          {img(media.braids, "Regal box braids")}
-          {img(media.curlsGlam, "Full glam with curly install", "col-span-2 md:col-span-1")}
+          {img(photo.fingerWaves, "Finger waves with bold glam")}
+          {img(photo.knotlessBraids, "Knotless braids with pink glam")}
+          {img(
+            photo.pinkCutCrease,
+            "Pink cut crease with curly install",
+            "col-span-2 md:col-span-1",
+          )}
           <div className="grid gap-3 md:grid-rows-2">
-            {img(media.honeyBob, "Honey blonde bob and bronze glam")}
-            {img(media.goldenWaves, "Golden brown waves", "hidden md:block")}
+            {img(photo.cornrowsGlam, "Cornrows with soft bronze glam")}
+            {img(photo.honeyWavesOrange, "Honey waves with smoky glam", "hidden md:block")}
           </div>
-          {img(media.deepPlum, "Deep plum waves")}
+          {img(photo.sleekStraight, "Sleek straight install")}
         </Reveal>
       </div>
     </section>
@@ -537,10 +560,10 @@ function Reviews() {
         </Reveal>
         <Reveal className="h-[300px] overflow-hidden rounded-xl sm:h-[360px]">
           <img
-            src={media.softWaves}
+            src={photo.bodyWaveSmile}
             alt="Happy SnS Glams client"
             loading="lazy"
-            className="h-full w-full object-cover object-[center_68%]"
+            className="h-full w-full object-cover object-[center_45%]"
           />
         </Reveal>
       </div>

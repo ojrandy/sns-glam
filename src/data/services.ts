@@ -45,7 +45,7 @@ export const services: Service[] = [
       faqs: [
         ["Do you offer bridal trials?", "Yes. Mention a trial in your booking notes and we'll schedule it ahead of your wedding date."],
         ["Can you do makeup for my whole bridal party?", "Absolutely. Add the number of people to your booking request and we'll plan timing so everyone is ready on schedule."],
-        ["Can you come to my venue?", "Choose \"At my venue\" when booking and share the address, and we'll confirm availability."],
+        ["Can you come to my venue?", "Yes, within 100 miles of our main studio. Choose \"At my venue\" when booking and share the address. A relocation fee applies, and venue bookings are subject to availability and cancellation."],
       ],
     },
   },
